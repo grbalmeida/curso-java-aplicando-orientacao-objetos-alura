@@ -1,5 +1,5 @@
 public class Principal {
-    public static void main(String[] args) {
+    public static void exibePoderosoChefao() {
         Filme meuFilme = new Filme();
         meuFilme.nome = "O poderoso chefão";
         meuFilme.anoDeLancamento = 1970;
@@ -14,7 +14,26 @@ public class Principal {
         System.out.println(meuFilme.somaDasAvaliacoes);
         System.out.println(meuFilme.totalDeAvaliacoes);
         System.out.println(meuFilme.pegaMedia());
+    }
 
+    public static void exibeMatrix() {
+        Filme favorito = new Filme();
 
+        favorito.nome = "The Matrix";
+        favorito.anoDeLancamento = 1999;
+        favorito.duracaoEmMinutos = 135;
+        favorito.incluidoNoPlano = true;
+
+        favorito.exibeFichaTecnica();
+        favorito.avalia(9);
+        favorito.avalia(8);
+        favorito.avalia(9);
+
+        System.out.println("Média de avaliações: " + favorito.pegaMedia());
+    }
+
+    public static void main(String[] args) {
+        // exibePoderosoChefao();
+        exibeMatrix();
     }
 }
