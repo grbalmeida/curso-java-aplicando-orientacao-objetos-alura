@@ -26,6 +26,7 @@ public class Principal {
         favorito.avalia(8);
         favorito.avalia(9);
 
+        System.out.println("Total de avaliações: " + favorito.getTotalDeAvaliacoes());
         System.out.println("Média de avaliações: " + favorito.pegaMedia());
     }
 
