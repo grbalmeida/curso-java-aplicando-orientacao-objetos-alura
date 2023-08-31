@@ -1,3 +1,4 @@
+import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
@@ -46,9 +47,44 @@ public class Principal {
         System.out.println("Duração para maratonar Lost: " + lost.getDuracaoEmMinutos());
     }
 
+    public static void exibeTempoAssistirFilmes() {
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+
+        Filme titanic = new Filme();
+        titanic.setNome("Titanic");
+        titanic.setAnoDeLancamento(1998);
+        titanic.setDiretor("James Cameron");
+        titanic.setDuracaoEmMinutos(194);
+        titanic.setIncluidoNoPlano(true);
+
+        Filme theAvengers = new Filme();
+        theAvengers.setNome("The Avengers");
+        theAvengers.setAnoDeLancamento(2012);
+        theAvengers.setDiretor("Joss Whedon");
+        theAvengers.setDuracaoEmMinutos(142);
+        theAvengers.setIncluidoNoPlano(true);
+
+        Serie listaNegra = new Serie();
+        listaNegra.setNome("The Blacklist");
+        listaNegra.setAnoDeLancamento(2013);
+        listaNegra.setTemporadas(9);
+        listaNegra.setEpisodiosPorTemporada(20);
+        listaNegra.setMinutosPorEpisodio(46);
+
+        calculadora.inclui(titanic);
+        // Adicionando duração em minutos de br.com.alura.screenmatch.modelos.Filme@1554909b
+        calculadora.inclui(theAvengers);
+        // Adicionando duração em minutos de br.com.alura.screenmatch.modelos.Filme@6bf256fa
+        calculadora.inclui(listaNegra);
+        // Adicionando duração em minutos de br.com.alura.screenmatch.modelos.Serie@6cd8737
+
+        System.out.println(calculadora.getTempoTotal());
+    }
+
     public static void main(String[] args) {
         // exibePoderosoChefao();
         // exibeMatrix();
-        exibeLost();
+        // exibeLost();
+        exibeTempoAssistirFilmes();
     }
 }
