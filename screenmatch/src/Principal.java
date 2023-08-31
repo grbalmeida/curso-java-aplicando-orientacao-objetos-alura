@@ -3,9 +3,9 @@ import br.com.alura.screenmatch.modelos.Filme;
 public class Principal {
     public static void exibePoderosoChefao() {
         Filme meuFilme = new Filme();
-        meuFilme.nome = "O poderoso chefão";
-        meuFilme.anoDeLancamento = 1970;
-        meuFilme.duracaoEmMinutos = 180;
+        meuFilme.setNome("O poderoso chefão");
+        meuFilme.setAnoDeLancamento(1970);
+        meuFilme.setDuracaoEmMinutos(180);
         meuFilme.exibeFichaTecnica();
 
         meuFilme.avalia(8);
@@ -17,10 +17,10 @@ public class Principal {
     public static void exibeMatrix() {
         Filme favorito = new Filme();
 
-        favorito.nome = "The Matrix";
-        favorito.anoDeLancamento = 1999;
-        favorito.duracaoEmMinutos = 135;
-        favorito.incluidoNoPlano = true;
+        favorito.setNome("The Matrix");
+        favorito.setAnoDeLancamento(1999);
+        favorito.setDuracaoEmMinutos(135);
+        favorito.setIncluidoNoPlano(true);
 
         favorito.exibeFichaTecnica();
         favorito.avalia(9);
