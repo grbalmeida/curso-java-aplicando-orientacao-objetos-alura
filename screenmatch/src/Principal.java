@@ -1,4 +1,6 @@
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
+import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
@@ -81,10 +83,63 @@ public class Principal {
         System.out.println(calculadora.getTempoTotal());
     }
 
+    public static void exibeClassificacaoFilme() {
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+
+        Filme exterminadorDoFuturo = new Filme();
+        exterminadorDoFuturo.setNome("The Terminator");
+        exterminadorDoFuturo.setAnoDeLancamento(1985);
+        exterminadorDoFuturo.setDuracaoEmMinutos(107);
+        exterminadorDoFuturo.setDiretor("James Cameron");
+        exterminadorDoFuturo.setIncluidoNoPlano(true);
+
+        exterminadorDoFuturo.avalia(9);
+        exterminadorDoFuturo.avalia(8);
+        exterminadorDoFuturo.avalia(7);
+        exterminadorDoFuturo.avalia(6.5);
+
+        exterminadorDoFuturo.exibeFichaTecnica();
+        System.out.println("Classificação: " + exterminadorDoFuturo.getClassificacao());
+
+        filtro.filtra(exterminadorDoFuturo);
+    }
+
+    public static void exibeClassificacaoSerie() {
+
+        Serie listaNegra = new Serie();
+        listaNegra.setNome("Blacklist");
+
+        Episodio episodio1 = new Episodio();
+        episodio1.setNome("Gina Zanetakos");
+        episodio1.setNumero(6);
+        episodio1.setTotalVisualizacoes(1_500_000);
+        episodio1.setSerie(listaNegra);
+
+        Episodio episodio2 = new Episodio();
+        episodio2.setNome("A Agência Cyprus");
+        episodio2.setNumero(13);
+        episodio2.setTotalVisualizacoes(1_300_000);
+        episodio2.setSerie(listaNegra);
+
+        Episodio episodio3 = new Episodio();
+        episodio3.setNome("Episódio não lançado");
+        episodio3.setNumero(1000);
+        episodio3.setTotalVisualizacoes(0);
+        episodio3.setSerie(listaNegra);
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+
+        filtro.filtra(episodio1);
+        filtro.filtra(episodio2);
+        filtro.filtra(episodio3);
+    }
+
     public static void main(String[] args) {
         // exibePoderosoChefao();
         // exibeMatrix();
         // exibeLost();
-        exibeTempoAssistirFilmes();
+        // exibeTempoAssistirFilmes();
+        // exibeClassificacaoFilme();
+        exibeClassificacaoSerie();
     }
 }
