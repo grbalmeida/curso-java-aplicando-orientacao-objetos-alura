@@ -1,4 +1,5 @@
 import br.com.alura.screenmatch.modelos.Filme;
+import br.com.alura.screenmatch.modelos.Serie;
 
 public class Principal {
     public static void exibePoderosoChefao() {
@@ -31,8 +32,24 @@ public class Principal {
         System.out.println("Média de avaliações: " + favorito.pegaMedia());
     }
 
+    public static void exibeLost() {
+        Serie lost = new Serie();
+
+        lost.setNome("Lost");
+        lost.setAnoDeLancamento(2004);
+        lost.setIncluidoNoPlano(false);
+        lost.setTemporadas(6);
+        lost.setMinutosPorEpisodio(44);
+        lost.setAtiva(false);
+        lost.setEpisodiosPorTemporada(20);
+        lost.setDuracaoEmMinutos(lost.getTemporadas() * lost.getEpisodiosPorTemporada() * lost.getMinutosPorEpisodio());
+
+        lost.exibeFichaTecnica();
+    }
+
     public static void main(String[] args) {
         // exibePoderosoChefao();
-        exibeMatrix();
+        // exibeMatrix();
+        exibeLost();
     }
 }
