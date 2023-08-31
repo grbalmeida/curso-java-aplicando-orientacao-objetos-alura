@@ -42,9 +42,8 @@ public class Principal {
         lost.setMinutosPorEpisodio(44);
         lost.setAtiva(false);
         lost.setEpisodiosPorTemporada(20);
-        lost.setDuracaoEmMinutos(lost.getTemporadas() * lost.getEpisodiosPorTemporada() * lost.getMinutosPorEpisodio());
 
-        lost.exibeFichaTecnica();
+        System.out.println("Duração para maratonar Lost: " + lost.getDuracaoEmMinutos());
     }
 
     public static void main(String[] args) {
