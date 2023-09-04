@@ -4,6 +4,8 @@ import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void exibePoderosoChefao() {
         Filme meuFilme = new Filme();
@@ -134,12 +136,37 @@ public class Principal {
         filtro.filtra(episodio3);
     }
 
+    public static void listaDeFilmesComArrayList() {
+        var filmeDoPaulo = new Filme();
+        filmeDoPaulo.setDuracaoEmMinutos(200);
+        filmeDoPaulo.setNome("Dogville");
+        filmeDoPaulo.setAnoDeLancamento(2003);
+        filmeDoPaulo.avalia(10);
+
+        var dossiePelicano = new Filme();
+        dossiePelicano.setNome("The Pelican Brief");
+        dossiePelicano.setAnoDeLancamento(1994);
+        dossiePelicano.setDuracaoEmMinutos(141);
+        dossiePelicano.setDiretor("Alan J. Pakula");
+
+        var somaDeTodosOsMedos = new Filme();
+        somaDeTodosOsMedos.setNome("The Sum of All Fears");
+        somaDeTodosOsMedos.setAnoDeLancamento(2002);
+        somaDeTodosOsMedos.setDiretor("Phil Alden Robinson");
+        somaDeTodosOsMedos.setDuracaoEmMinutos(124);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeDoPaulo);
+        listaDeFilmes.add(somaDeTodosOsMedos);
+        listaDeFilmes.add(dossiePelicano);
+
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
+        System.out.println("Primeiro filme: " + listaDeFilmes.get(0).getNome());
+        System.out.println(listaDeFilmes);
+        // [br.com.alura.screenmatch.modelos.Filme@5ebec15, ...]
+    }
+
     public static void main(String[] args) {
-        // exibePoderosoChefao();
-        // exibeMatrix();
-        // exibeLost();
-        // exibeTempoAssistirFilmes();
-        // exibeClassificacaoFilme();
-        exibeClassificacaoSerie();
+        listaDeFilmesComArrayList();
     }
 }
