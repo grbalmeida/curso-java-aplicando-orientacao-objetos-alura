@@ -171,7 +171,14 @@ public class Principal {
         // depois: [Filme: Dogville (2003), ...]
     }
 
+    public static void construindoObjetosComValores() {
+        Filme dogville = new Filme("Dogville");
+
+        dogville.exibeFichaTecnica();
+    }
+
     public static void main(String[] args) {
-        listaDeFilmesComArrayList();
+        // listaDeFilmesComArrayList();
+        construindoObjetosComValores();
     }
 }
