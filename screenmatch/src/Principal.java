@@ -162,8 +162,13 @@ public class Principal {
 
         System.out.println("Tamanho da lista: " + listaDeFilmes.size());
         System.out.println("Primeiro filme: " + listaDeFilmes.get(0).getNome());
+        System.out.println("toString do filme: " + listaDeFilmes.get(0).toString());
+        // antes: toString do filme: br.com.alura.screenmatch.modelos.Filme@5ebec15
+        // depois: toString do filme: Filme: Dogville (2003)
+
         System.out.println(listaDeFilmes);
-        // [br.com.alura.screenmatch.modelos.Filme@5ebec15, ...]
+        // antes: [br.com.alura.screenmatch.modelos.Filme@5ebec15, ...]
+        // depois: [Filme: Dogville (2003), ...]
     }
 
     public static void main(String[] args) {
