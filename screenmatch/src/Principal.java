@@ -8,9 +8,7 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void exibePoderosoChefao() {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("O poderoso chefão");
-        meuFilme.setAnoDeLancamento(1970);
+        Filme meuFilme = new Filme("O poderoso chefão", 1970);
         meuFilme.setDuracaoEmMinutos(180);
         meuFilme.exibeFichaTecnica();
 
@@ -21,10 +19,8 @@ public class Principal {
     }
 
     public static void exibeMatrix() {
-        Filme favorito = new Filme();
+        Filme favorito = new Filme("The Matrix", 1999);
 
-        favorito.setNome("The Matrix");
-        favorito.setAnoDeLancamento(1999);
         favorito.setDuracaoEmMinutos(135);
         favorito.setIncluidoNoPlano(true);
 
@@ -38,10 +34,8 @@ public class Principal {
     }
 
     public static void exibeLost() {
-        Serie lost = new Serie();
+        Serie lost = new Serie("Lost", 2004);
 
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2004);
         lost.setIncluidoNoPlano(false);
         lost.setTemporadas(6);
         lost.setMinutosPorEpisodio(44);
@@ -54,23 +48,17 @@ public class Principal {
     public static void exibeTempoAssistirFilmes() {
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
 
-        Filme titanic = new Filme();
-        titanic.setNome("Titanic");
-        titanic.setAnoDeLancamento(1998);
+        Filme titanic = new Filme("Titanic", 1998);
         titanic.setDiretor("James Cameron");
         titanic.setDuracaoEmMinutos(194);
         titanic.setIncluidoNoPlano(true);
 
-        Filme theAvengers = new Filme();
-        theAvengers.setNome("The Avengers");
-        theAvengers.setAnoDeLancamento(2012);
+        Filme theAvengers = new Filme("The Avengers", 2012);
         theAvengers.setDiretor("Joss Whedon");
         theAvengers.setDuracaoEmMinutos(142);
         theAvengers.setIncluidoNoPlano(true);
 
-        Serie listaNegra = new Serie();
-        listaNegra.setNome("The Blacklist");
-        listaNegra.setAnoDeLancamento(2013);
+        Serie listaNegra = new Serie("The Blacklist", 2013);
         listaNegra.setTemporadas(9);
         listaNegra.setEpisodiosPorTemporada(20);
         listaNegra.setMinutosPorEpisodio(46);
@@ -88,9 +76,7 @@ public class Principal {
     public static void exibeClassificacaoFilme() {
         FiltroRecomendacao filtro = new FiltroRecomendacao();
 
-        Filme exterminadorDoFuturo = new Filme();
-        exterminadorDoFuturo.setNome("The Terminator");
-        exterminadorDoFuturo.setAnoDeLancamento(1985);
+        Filme exterminadorDoFuturo = new Filme("The Terminator", 1985);
         exterminadorDoFuturo.setDuracaoEmMinutos(107);
         exterminadorDoFuturo.setDiretor("James Cameron");
         exterminadorDoFuturo.setIncluidoNoPlano(true);
@@ -108,8 +94,7 @@ public class Principal {
 
     public static void exibeClassificacaoSerie() {
 
-        Serie listaNegra = new Serie();
-        listaNegra.setNome("Blacklist");
+        Serie listaNegra = new Serie("Blacklist", 2013);
 
         Episodio episodio1 = new Episodio();
         episodio1.setNome("Gina Zanetakos");
@@ -137,21 +122,15 @@ public class Principal {
     }
 
     public static void listaDeFilmesComArrayList() {
-        var filmeDoPaulo = new Filme();
+        var filmeDoPaulo = new Filme("Dogville", 2003);
         filmeDoPaulo.setDuracaoEmMinutos(200);
-        filmeDoPaulo.setNome("Dogville");
-        filmeDoPaulo.setAnoDeLancamento(2003);
         filmeDoPaulo.avalia(10);
 
-        var dossiePelicano = new Filme();
-        dossiePelicano.setNome("The Pelican Brief");
-        dossiePelicano.setAnoDeLancamento(1994);
+        var dossiePelicano = new Filme("The Pelican Brief", 1994);
         dossiePelicano.setDuracaoEmMinutos(141);
         dossiePelicano.setDiretor("Alan J. Pakula");
 
-        var somaDeTodosOsMedos = new Filme();
-        somaDeTodosOsMedos.setNome("The Sum of All Fears");
-        somaDeTodosOsMedos.setAnoDeLancamento(2002);
+        var somaDeTodosOsMedos = new Filme("The Sum of All Fears", 2002);
         somaDeTodosOsMedos.setDiretor("Phil Alden Robinson");
         somaDeTodosOsMedos.setDuracaoEmMinutos(124);
 
@@ -172,7 +151,7 @@ public class Principal {
     }
 
     public static void construindoObjetosComValores() {
-        Filme dogville = new Filme("Dogville");
+        Filme dogville = new Filme("Dogville", 2003);
 
         dogville.exibeFichaTecnica();
     }

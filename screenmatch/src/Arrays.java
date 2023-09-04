@@ -14,13 +14,8 @@ public class Arrays {
 
         Filme[] filmes = new Filme[2];
 
-        Filme filme1 = new Filme();
-        filme1.setNome("Avatar");
-        filme1.setAnoDeLancamento(2009);
-
-        Filme filme2 = new Filme();
-        filme2.setNome("Dogville");
-        filme2.setAnoDeLancamento(2003);
+        Filme filme1 = new Filme("Avatar", 2009);
+        Filme filme2 = new Filme("Dogville", 2003);
 
         filmes[0] = filme1;
         filmes[1] = filme2;
