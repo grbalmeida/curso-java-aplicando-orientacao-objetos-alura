@@ -6,6 +6,7 @@ import br.com.alura.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalComListas {
 
@@ -62,6 +63,7 @@ public class PrincipalComListas {
         Filme titanic = new Filme("Titanic", 1997);
         Filme avatar = new Filme("Avatar: o caminho da água", 2022);
         Filme vingadoresUltimato = new Filme("Vingadores: Ultimato", 2019);
+        Serie lost = new Serie("Lost", 2000);
 
         ArrayList<Titulo> titulos = new ArrayList<>();
         titulos.add(vingadores);
@@ -72,6 +74,7 @@ public class PrincipalComListas {
         titulos.add(titanic);
         titulos.add(avatar);
         titulos.add(vingadoresUltimato);
+        titulos.add(lost);
 
         System.out.println(titulos);
         // [Filme: Os Vingadores (2012), Filme: O rei leão (2019), ...]
@@ -79,6 +82,10 @@ public class PrincipalComListas {
         Collections.sort(titulos);
         System.out.println(titulos);
         // [Filme: Avatar: o caminho da água (2022), Filme: Homem-Aranha: Sem volta para casa (2021), ...]
+
+        titulos.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano");
+        System.out.println(titulos);
     }
 
     public static void main(String[] args) {
