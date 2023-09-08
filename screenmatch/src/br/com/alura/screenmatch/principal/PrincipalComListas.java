@@ -4,9 +4,7 @@ import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class PrincipalComListas {
 
@@ -88,8 +86,22 @@ public class PrincipalComListas {
         System.out.println(titulos);
     }
 
+    public static void utilizandoInterfaceList() {
+        List<Titulo> titulos = new LinkedList<>();
+        Filme coracaoSelvagem = new Filme("Coração Selvagem", 1990);
+        Filme panico = new Filme("Pânico", 1996);
+        Filme romeuJulieta = new Filme("Romeu e Julieta", 1996);
+
+        titulos.add(coracaoSelvagem);
+        titulos.add(panico);
+        titulos.add(romeuJulieta);
+
+        titulos.forEach(System.out::println);
+    }
+
     public static void main(String[] args) {
         // ordenandoListaDeStrings();
-        ordenandoListaDeTitulos();
+        // ordenandoListaDeTitulos();
+        utilizandoInterfaceList();
     }
 }
